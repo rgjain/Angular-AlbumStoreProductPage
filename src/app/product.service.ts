@@ -4,15 +4,17 @@ import { Http, Response } from "@angular/http";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs/Observable";
 
+import { Album } from "./album";
+
 @Injectable()
 export class ProductService {
   private _albumUrl = "../assets/album.json";
 
   constructor(private _http: Http) {}
 
-  getAlbum(id: number): Observable<any> {
+  getAlbum(id: number): Observable<Album> {
     return this._http
       .get(this._albumUrl)
-      .pipe(map((response) => response.json()));
+      .pipe(map((response) => response.json() as Album));
   }
 }
