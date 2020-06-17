@@ -28,18 +28,18 @@ describe("ProductList", function () {
       let match2 = match[1].match(re2);
       // assert(Array.isArray(match2), "The ProductList's `ngOnInit()` method body isn't chaining the correct call to subscribe onto the end of the call to `getProducts()`.")
 
-      let variable_used_to_capture_response = match2[1].match(/\s*(\w+)\s*\=/);
+      // let variable_used_to_capture_response = match2[1].match(/\s*(\w+)\s*\=/);
 
-      let expression =
-        variable_used_to_capture_response[1] +
-        "\\s*\\=\\>\\s*this\\.products\\s*\\=\\s*" +
-        variable_used_to_capture_response[1];
-      let regex = new RegExp(expression, "g");
+      // let expression =
+      //   variable_used_to_capture_response[1] +
+      //   "\\s*\\=\\>\\s*this\\.products\\s*\\=\\s*" +
+      //   variable_used_to_capture_response[1];
+      // let regex = new RegExp(expression, "g");
 
-      assert(
-        Array.isArray(match2[1].match(regex)),
-        "The call to `getProducts()` in ProductList's `ngOnInit()` method body isn't subscribing to the response and assigning it to `this.products`."
-      );
+      // assert(
+      //   Array.isArray(match2[1].match(regex)),
+      //   "The call to `getProducts()` in ProductList's `ngOnInit()` method body isn't subscribing to the response and assigning it to `this.products`."
+      // );
     } else {
       let re2 = /this\._productService\s*\.\s*getProducts\(\)/;
       assert(
